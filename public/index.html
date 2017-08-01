@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./component/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    <h3>这是index页面</h3>
+ 
+    <span class="hello">你可以点击这里</span>
+ 
+    <script type="text/javascript">
+        $(function(){
+            var contextPath = 'http://localhost:3000';
+            $('.hello').on('click',function(){
+                $.ajax({
+                    type:'get',
+                    data:'click',
+                    url:contextPath+'/api/hello',
+                    success:function(data){
+                        console.log(data);
+                    },
+                    error:function(data){
+                        console.log(data);
+                    }
+ 
+                })
+            })
+        })
+    </script>
+ 
+</body>
+</html>
